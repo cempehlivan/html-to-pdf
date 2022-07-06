@@ -1,0 +1,60 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "",
+      "version": "1.0.0",
+      "title": "Swagger",
+      "termsOfService": "",
+      "contact": {
+        "email": ""
+      }
+    },
+    "host": "",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "converter",
+        "description": ""
+      }
+    ],
+    "schemes": ["http"],
+    "paths": {
+      "/converter/htmltopdf": {
+        "post": {
+          "tags": ["converter"],
+          "summary": "HTML to PDF",
+          "description": "",
+          "operationId": "",
+          "consumes": ["application/json"],
+          "produces": ["application/json"],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/HTMLtoPDFRequest"
+              }
+            }
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "HTMLtoPDFRequest": {
+        "type": "object",
+        "properties": {
+          "html": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+  

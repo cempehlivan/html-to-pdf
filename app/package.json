@@ -1,0 +1,21 @@
+{
+  "name": "html-to-pdf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "repository": {
+    "url": "https://github.com/cempehlivan/html-to-pdf"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "puppeteer": "^15.3.1",
+    "swagger-ui-express": "^4.4.0"
+  }
+}
