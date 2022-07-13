@@ -27,7 +27,11 @@ app.post("/converter/htmltopdf", async (req, res) => {
   const page = await browser.newPage();
   await page.setDefaultNavigationTimeout(0);
 
-  await page.setContent(req.body.html);
+  if (req.body.url != undefined) {
+    await page.goto(req.body.url);
+  } else {
+    await page.setContent(req.body.html);
+  }
 
   var options = Object.assign(
     {},
