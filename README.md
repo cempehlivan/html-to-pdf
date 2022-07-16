@@ -111,6 +111,16 @@ The sizes of each format are as follows: - `Letter`: 8.5in x 11in
 }
 ```
 
+
+## If you get an error on Ubuntu 
+
+The API may give an error due to the lack of some packages on Ubuntu. You can resolve this error by running the following command.
+
+```bash
+sudo apt-get install -y libgtk2.0-0 libgtk-3-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb libgbm-dev
+```
+
+
 ## Packages used
 
 - [puppeteer](https://github.com/puppeteer/puppeteer)
