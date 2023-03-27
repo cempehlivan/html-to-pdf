@@ -1,60 +1,95 @@
 {
-    "swagger": "2.0",
-    "info": {
-      "description": "",
-      "version": "1.0.0",
-      "title": "Swagger",
-      "termsOfService": "",
-      "contact": {
-        "email": ""
-      }
-    },
-    "host": "",
-    "basePath": "/",
-    "tags": [
-      {
-        "name": "converter",
-        "description": ""
-      }
-    ],
-    "schemes": ["http"],
-    "paths": {
-      "/converter/htmltopdf": {
-        "post": {
-          "tags": ["converter"],
-          "summary": "HTML to PDF",
-          "description": "",
-          "operationId": "",
-          "consumes": ["application/json"],
-          "produces": ["application/json"],
-          "parameters": [
-            {
-              "in": "body",
-              "name": "body",
-              "description": "",
-              "required": true,
-              "schema": {
-                "$ref": "#/definitions/HTMLtoPDFRequest"
-              }
+  "swagger": "2.0",
+  "info": {
+    "description": "This api contains Chromium-based HTML to PDF API.",
+    "version": "1.0.1",
+    "title": "HTML to PDF",
+    "termsOfService": "",
+    "contact": {
+      "email":""
+    }
+  },
+  "host": "",
+  "tags": [
+    {
+      "name": "",
+      "description": ""
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/api/htmltopdf": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+
+        "summary": "HTML to PDF",
+        "description": "",
+        "operationId": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/HTMLtoPDFRequest"
             }
-          ],
-          "responses": {
-            "405": {
-              "description": "Invalid input"
-            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
           }
         }
       }
-    },
-    "definitions": {
-      "HTMLtoPDFRequest": {
-        "type": "object",
-        "properties": {
-          "html": {
-            "type": "string"
+    }
+  },
+  "definitions": {
+    "HTMLtoPDFRequest": {
+      "type": "object",
+      "properties": {
+        "html": {
+          "type": "string"
+        },
+        "options": {
+          "type": "object",
+          "properties": {
+            "format": {
+              "type": "string"
+            },
+            "printBackground": {
+              "type": "boolean"
+            },
+            "margin": {
+              "type": "object",
+              "properties": {
+                "top": {
+                  "type": "string"
+                },
+                "left": {
+                  "type": "string"
+                },
+                "right": {
+                  "type": "string"
+                },
+                "bottom": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       }
     }
   }
-  
+}
